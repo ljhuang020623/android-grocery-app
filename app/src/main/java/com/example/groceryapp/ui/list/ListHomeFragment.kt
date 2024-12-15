@@ -33,6 +33,7 @@ class ListHomeFragment: Fragment(), ItemAdapter.OnItemClickListener {
 
     override fun onViewCreated(view:View,savedInstanceState:Bundle?) {
         super.onViewCreated(view,savedInstanceState)
+
         val prefs = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         token = prefs.getString("list_token",null)
         nickname = prefs.getString("nickname",null)

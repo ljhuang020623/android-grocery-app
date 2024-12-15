@@ -35,6 +35,8 @@ class ItemDetailFragment : Fragment() {
 
     override fun onViewCreated(view:View,savedInstanceState:Bundle?){
         super.onViewCreated(view,savedInstanceState)
+
+
         val prefs = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         token = prefs.getString("list_token",null)
         nickname = prefs.getString("nickname",null)
@@ -66,7 +68,6 @@ class ItemDetailFragment : Fragment() {
         }
 
         binding.removeBtn.setOnClickListener {
-            // Remove item
             lifecycleScope.launch {
                 try {
                     repo.removeItem(token!!, itemId)
@@ -99,3 +100,4 @@ class ItemDetailFragment : Fragment() {
         _binding=null
     }
 }
+

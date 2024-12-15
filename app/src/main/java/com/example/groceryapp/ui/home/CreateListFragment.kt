@@ -43,10 +43,8 @@ class CreateListFragment: Fragment() {
                         .putString("nickname", nickname)
                         .apply()
 
-                    // Show the generated token to the user
                     Toast.makeText(requireContext(), "Your token: $token", Toast.LENGTH_LONG).show()
 
-                    // Navigate back to the home page so the user can join with this token if they want
                     findNavController().navigate(R.id.homeFragment)
                     AlertDialog.Builder(requireContext())
                         .setTitle("List Token")
@@ -58,7 +56,6 @@ class CreateListFragment: Fragment() {
                             Toast.makeText(requireContext(), "Token copied to clipboard", Toast.LENGTH_SHORT).show()
                         }
                         .setNegativeButton("Ok") { _, _ ->
-                            // Navigate back to home if desired
                             findNavController().navigate(R.id.homeFragment)
                         }
                         .show()

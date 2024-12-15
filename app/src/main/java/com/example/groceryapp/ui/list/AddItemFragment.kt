@@ -33,6 +33,12 @@ class AddItemFragment: Fragment() {
 
     override fun onViewCreated(view:View,savedInstanceState:Bundle?){
         super.onViewCreated(view,savedInstanceState)
+        val restoredText = savedInstanceState?.getString("currentText")
+        if (restoredText != null) {
+            binding.itemNameEt.setText(restoredText)
+        }
+
+
         val prefs = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         token = prefs.getString("list_token",null)
         nickname = prefs.getString("nickname",null)
@@ -91,6 +97,10 @@ class AddItemFragment: Fragment() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("currentText", binding.itemNameEt.text.toString())
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null
