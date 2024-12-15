@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Grocery List Sharing</string>
+    <string name="create_list">Create List</string>
+    <string name="join_list">Join List</string>
+    <string name="enter_list_name">Enter list name</string>
+    <string name="generate_token">Generate Token</string>
+    <string name="enter_token">Enter token</string>
+    <string name="enter_nickname">Enter your nickname</string>
+    <string name="save">Save</string>
+    <string name="invalid_token">Invalid token. Please check and try again.</string>
+    <string name="list_home">List Home</string>
+    <string name="logout">Logout</string>
+    <string name="help">Help</string>
+    <string name="theme">Theme</string>
+    <string name="add_item">Add Item</string>
+    <string name="edit_item">Edit Item</string>
+    <string name="remove_item">Remove Item</string>
+    <string name="item_name">Item Name</string>
+    <string name="quantity">Quantity</string>
+    <string name="buy_before">Buy Before</string>
+    <string name="price">Price</string>
+    <string name="total_cost">Total: </string>
+    <string name="home">Home</string>
+    <string name="error_saving">Error performing operation. Check connection and try again.</string>
+</resources>

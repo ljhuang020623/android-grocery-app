@@ -1,0 +1,29 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Custom Dark Theme -->
+    <style name="Theme.GroceryApp.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary Colors for Dark Theme -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryContainer">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+
+        <!-- Button Style -->
+        <item name="buttonStyle">@style/CustomDarkButtonStyle</item>
+
+        <!-- Neutralize Tinting -->
+        <item name="android:colorControlNormal">@null</item>
+        <item name="android:colorControlActivated">@null</item>
+        <item name="android:colorControlHighlight">@null</item>
+    </style>
+
+    <!-- Custom Button Style for Dark Mode -->
+    <style name="CustomDarkButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/divider</item> <!-- Custom button background -->
+        <item name="android:backgroundTint">@null</item> <!-- Disable Material tint -->
+        <item name="android:textColor">@android:color/white</item> <!-- White text for dark mode -->
+        <item name="android:elevation">4dp</item> <!-- Add slight shadow -->
+        <item name="android:padding">12dp</item> <!-- Comfortable padding -->
+        <item name="android:textStyle">bold</item> <!-- Bold text -->
+    </style>
+</resources>

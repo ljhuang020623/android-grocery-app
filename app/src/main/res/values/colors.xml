@@ -1,0 +1,8 @@
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="customColor">#000000</color>
+
+    <color name="button_ripple_color">#A5D6A7</color>
+</resources>

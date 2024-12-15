@@ -1,0 +1,10 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Custom Light Theme -->
+    <style name="Theme.GroceryApp.Light" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Neutralize button styling -->
+        <item name="buttonStyle">@null</item>
+        <!-- Primary colors for Light Theme -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+    </style>
+</resources>
