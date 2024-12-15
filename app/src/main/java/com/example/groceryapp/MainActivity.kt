@@ -2,8 +2,13 @@ package com.example.groceryapp
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.groceryapp.databinding.ActivityMainBinding
@@ -40,8 +45,38 @@ class MainActivity : AppCompatActivity() {
         if (token != null && nickname != null) {
             navController.navigate(R.id.listHomeFragment)
         }
-    }
+        // Add MenuProvider for the main menu
+        addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.main_menu, menu)
+            }
 
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when(menuItem.itemId) {
+                    R.id.action_theme -> {
+                        showThemeSelection()
+                        true
+                    }
+                    R.id.action_help -> {
+                        // Navigate to help fragment
+                        navController.navigate(R.id.helpFragment)
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, this)
+    }
+    private fun showThemeSelection() {
+        val themes = arrayOf("Light","Dark","Custom")
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.theme))
+            .setItems(themes) { _, which ->
+                val prefs = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                prefs.edit().putInt("theme", which).apply()
+                recreate()
+            }.show()
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp() || super.onSupportNavigateUp()

@@ -60,7 +60,7 @@
         android:text="Edit"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:backgroundTint="@null"
+        android:backgroundTint="#F88966"
         android:elevation="4dp"
         android:padding="8dp" />
 

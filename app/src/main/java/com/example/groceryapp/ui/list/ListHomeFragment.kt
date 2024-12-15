@@ -63,7 +63,6 @@ class ListHomeFragment: Fragment(), ItemAdapter.OnItemClickListener {
             binding.totalTv.text = getString(R.string.total_cost) + "$" + total
         }
 
-        // Add button should navigate to addItemFragment
         binding.addBtn.setOnClickListener {
             findNavController().navigate(R.id.addItemFragment)
         }
@@ -73,37 +72,6 @@ class ListHomeFragment: Fragment(), ItemAdapter.OnItemClickListener {
             findNavController().navigate(R.id.homeFragment)
         }
 
-        // Menu with theme & help
-        requireActivity().addMenuProvider(object : MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(R.menu.main_menu, menu)
-            }
-
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                return when(menuItem.itemId){
-                    R.id.action_theme -> {
-                        showThemeSelection()
-                        true
-                    }
-                    R.id.action_help->{
-                        findNavController().navigate(R.id.helpFragment)
-                        true
-                    }
-                    else->false
-                }
-            }
-        }, viewLifecycleOwner)
-    }
-
-    private fun showThemeSelection(){
-        val themes = arrayOf("Light","Dark","Custom")
-        AlertDialog.Builder(requireContext())
-            .setTitle(getString(R.string.theme))
-            .setItems(themes) { _, which ->
-                val prefs = requireContext().getSharedPreferences("user_prefs",Context.MODE_PRIVATE)
-                prefs.edit().putInt("theme",which).apply()
-                requireActivity().recreate()
-            }.show()
     }
 
     override fun onItemClicked(item: Item) {

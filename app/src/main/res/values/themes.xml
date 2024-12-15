@@ -4,7 +4,7 @@
         <!-- Neutralize button styling -->
         <item name="buttonStyle">@null</item>
         <!-- Primary colors for Light Theme -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">#0B0B0B</item>
         <item name="colorSecondary">@color/colorSecondary</item>
     </style>
 </resources>

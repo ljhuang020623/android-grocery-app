@@ -1,71 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <!-- Home | Logout Button at the bottom -->
+    <Button
+        android:id="@+id/home_logout_Btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:text="Home | Logout"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:padding="10dp"
+        app:cornerRadius="12dp"
+        app:backgroundTint="@android:color/holo_blue_dark"
+        android:layout_alignParentBottom="true" />
 
-        <EditText
-            android:id="@+id/itemNameEt"
+    <!-- Save Button above Home|Logout -->
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:padding="10dp"
+        app:cornerRadius="12dp"
+        app:backgroundTint="@android:color/holo_green_dark"
+        android:layout_above="@id/home_logout_Btn"
+        android:layout_marginBottom="24dp" />
+
+    <!-- ScrollView for input fields -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/saveBtn"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="16dp">
+
+        <!-- Container for the group of fields -->
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/item_name"/>
+            android:padding="8dp"
+            android:background="#FAFAFA">
 
-        <EditText
-            android:id="@+id/buyBeforeEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/buy_before"
-            android:focusable="false"
-            android:clickable="true"
-            android:layout_marginTop="8dp"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/quantityEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/quantity"
-            android:layout_marginTop="8dp"/>
+                <EditText
+                    android:id="@+id/itemNameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/item_name"
+                    android:background="@drawable/edittext_background"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="12dp" />
 
-        <EditText
-            android:id="@+id/priceEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/price"
-            android:layout_marginTop="8dp"
-            android:inputType="numberDecimal"/>
+                <EditText
+                    android:id="@+id/buyBeforeEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/buy_before"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:background="@drawable/edittext_background"
+                    android:layout_marginBottom="12dp" />
 
-        <Button
-            android:id="@+id/saveBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/save"
-            android:layout_marginTop="16dp"/>
+                <EditText
+                    android:id="@+id/quantityEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/quantity"
+                    android:background="@drawable/edittext_background"
+                    android:layout_marginBottom="12dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+                <EditText
+                    android:id="@+id/priceEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/price"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/edittext_background"
+                    android:layout_marginBottom="50dp" />
+            </LinearLayout>
+        </FrameLayout>
+    </ScrollView>
 
-            <Button
-                android:id="@+id/homeBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home"/>
-
-            <Button
-                android:id="@+id/logoutBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/logout"
-                android:layout_marginStart="8dp"/>
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>
