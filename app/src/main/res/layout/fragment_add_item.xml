@@ -61,6 +61,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/item_name"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
                     android:background="@drawable/edittext_background"
                     android:layout_marginTop="50dp"
                     android:layout_marginBottom="12dp" />
@@ -72,6 +74,8 @@
                     android:hint="@string/buy_before"
                     android:focusable="false"
                     android:clickable="true"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
                     android:background="@drawable/edittext_background"
                     android:layout_marginBottom="12dp" />
 
@@ -80,6 +84,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/quantity"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
                     android:background="@drawable/edittext_background"
                     android:layout_marginBottom="12dp" />
 
@@ -89,6 +95,8 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/price"
                     android:inputType="numberDecimal"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
                     android:background="@drawable/edittext_background"
                     android:layout_marginBottom="50dp" />
             </LinearLayout>

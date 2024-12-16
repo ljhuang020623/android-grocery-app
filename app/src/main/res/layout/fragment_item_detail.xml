@@ -69,7 +69,9 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/info_background">
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/edittext_background">
 
                 <TextView
                     android:id="@+id/itemNameTv"
@@ -78,6 +80,7 @@
                     android:text="Item Name"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@android:color/black"
                     android:layout_marginBottom="12dp"/>
 
                 <TextView
@@ -85,6 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Buy Before:"
+                    android:textColor="@android:color/black"
                     android:layout_marginBottom="12dp"/>
 
                 <TextView
@@ -92,6 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Quantity:"
+                    android:textColor="@android:color/black"
                     android:layout_marginBottom="12dp"/>
 
                 <TextView
@@ -99,12 +104,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Price:"
+                    android:textColor="@android:color/black"
                     android:layout_marginBottom="12dp"/>
 
                 <TextView
                     android:id="@+id/lastModifiedByTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
                     android:text="Last modified by:"
                     android:layout_marginBottom="12dp"/>
             </LinearLayout>
