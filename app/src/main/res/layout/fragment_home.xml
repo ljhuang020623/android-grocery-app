@@ -1,37 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-
-    <Button
-        android:id="@+id/createListBtn"
-        android:layout_width="wrap_content"
+    <!-- LinearLayout wrapped inside ScrollView to make it scrollable -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/create_list"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:padding="10dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="@android:color/holo_green_dark" />
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/joinListBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/join_list"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:padding="10dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="@android:color/holo_blue_dark"
-        android:layout_marginTop="16dp" />
+        <!-- Title TextView, with wrap_content to allow resizing based on text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Grocery List Sharing Application"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
 
-</LinearLayout>
+        <!-- ImageView with wrap_content to handle different image sizes -->
+        <ImageView
+            android:id="@+id/myImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shop_list"
+            android:contentDescription="Shopping image"
+            android:padding="30dp"/>
+
+        <!-- Button to Create List -->
+        <Button
+            android:id="@+id/createListBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_list"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="10dp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="@android:color/holo_green_dark" />
+
+        <!-- Button to Join List with margin for spacing -->
+        <Button
+            android:id="@+id/joinListBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/join_list"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="10dp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="@android:color/holo_blue_dark"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
